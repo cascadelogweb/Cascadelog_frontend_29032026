@@ -1,0 +1,227 @@
+.NotFound_container {
+  height: calc(100vh - var(--home-nav-height));
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--home-nav-height);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  position: relative;
+}
+
+.NotFound_light {
+  background: var(--about-light-bg);
+  color: var(--about-light-text);
+}
+
+.NotFound_dark {
+  background: var(--about-dark-bg);
+  color: var(--about-dark-text);
+}
+
+/* --- SVG Illustration --- */
+.NotFound_illustration {
+  width: 100%;
+  max-width: 320px;
+  margin-bottom: 25px;
+  animation: float404 4s ease-in-out infinite;
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.1));
+}
+
+@keyframes float404 {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+/* --- Content Styling --- */
+.NotFound_topBrand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.NotFound_topBrand span {
+  background: var(--home-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.NotFound_title {
+  font-size: 3.8rem;
+  font-weight: 900;
+  margin: 0;
+  line-height: 1;
+  background: var(--home-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+  from {
+    filter: drop-shadow(0 0 5px rgba(255, 20, 147, 0.2));
+  }
+
+  to {
+    filter: drop-shadow(0 0 15px rgba(255, 140, 0, 0.3));
+  }
+}
+
+.NotFound_note {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 25px;
+  opacity: 0.8;
+}
+
+.NotFound_diagnosticBox {
+  margin: 0 auto 30px auto;
+  padding: 16px 20px;
+  background: rgba(255, 20, 147, 0.05);
+  border-left: 4px solid var(--auth-brand-pink);
+  border-radius: 4px;
+  text-align: left;
+  max-width: 480px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+
+.NotFound_dark .NotFound_diagnosticBox {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: var(--auth-brand-pink);
+}
+
+.NotFound_diagnosticBox p {
+  margin: 0;
+  margin-bottom: 5px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.85rem;
+  color: var(--auth-brand-pink);
+  opacity: 1;
+  font-weight: 600;
+}
+
+.NotFound_dark .NotFound_diagnosticBox p {
+  color: #ff69b4;
+}
+
+/* --- Action Buttons --- */
+.NotFound_actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.NotFound_homeBtn,
+.NotFound_backBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 35px;
+  border-radius: var(--home-radius-btn);
+  font-weight: 700;
+  font-size: 1rem;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.NotFound_homeBtn {
+  background: var(--home-gradient);
+  color: white;
+  box-shadow: 0 10px 25px rgba(255, 20, 147, 0.3);
+  border: none;
+}
+
+.NotFound_backBtn {
+  background: var(--about-light-card);
+  color: var(--about-light-text);
+  border: 1px solid var(--about-light-border);
+  box-shadow: var(--about-light-shadow);
+}
+
+.NotFound_dark .NotFound_backBtn {
+  background: var(--about-dark-card);
+  color: var(--about-dark-text);
+  border-color: var(--about-dark-border);
+  box-shadow: var(--about-dark-shadow);
+}
+
+.NotFound_homeBtn:hover,
+.NotFound_backBtn:hover {
+  transform: translateY(-5px) scale(1.05);
+}
+
+.NotFound_homeBtn:hover {
+  box-shadow: 0 15px 35px rgba(255, 20, 147, 0.5);
+}
+
+
+.NotFound_homeBtn svg {
+  font-size: 1.3rem;
+}
+
+/* --- ANIMATIONS --- */
+.NotFound_appear {
+  opacity: 0;
+  animation: slideInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.NotFound_delay-1 {
+  animation-delay: 0.2s;
+}
+
+.NotFound_delay-2 {
+  animation-delay: 0.4s;
+}
+
+.NotFound_delay-3 {
+  animation-delay: 0.6s;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .NotFound_title {
+    font-size: 4rem;
+  }
+
+  .NotFound_subtitle {
+    font-size: 1.4rem;
+  }
+
+  .NotFound_illustration {
+    max-width: 300px;
+  }
+}

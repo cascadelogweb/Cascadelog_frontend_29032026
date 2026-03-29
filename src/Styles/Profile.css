@@ -1,0 +1,644 @@
+/* --- Profile Theme Variables --- */
+.Prof_light {
+  --pr-bg: #f8f9fa;
+  --pr-panel: #ffffff;
+  --pr-text: #333333;
+  --pr-text-muted: #666666;
+  --pr-border: #eeeeee;
+  --pr-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  --pr-input: #ffffff;
+}
+
+.Prof_dark {
+  --pr-bg: #0d1117;
+  --pr-panel: #161b22;
+  --pr-text: #c9d1d9;
+  --pr-text-muted: #8b949e;
+  --pr-border: #30363d;
+  --pr-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  --pr-input: #0d1117;
+}
+
+.Prof_container {
+  padding: 30px;
+  background-color: var(--pr-bg);
+  min-height: 100%;
+  box-sizing: border-box;
+  font-family: inherit;
+  transition: all 0.4s ease;
+}
+
+/* --- Layout Wrapper --- */
+.Prof_contentWrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  gap: 30px;
+}
+
+/* --- SIDEBAR (Left) --- */
+.Prof_sidebar {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+.Prof_userCard,
+.Prof_sidePanel {
+  background: var(--pr-panel);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: var(--pr-shadow);
+  border: 1px solid var(--pr-border);
+  transition: all 0.4s ease;
+}
+
+.Prof_avatarLg {
+  width: 140px;
+  height: 140px;
+  background: var(--pr-bg);
+  border-radius: 12px;
+  position: relative;
+  margin: 0 auto 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  color: #ccc;
+  overflow: visible;
+  border: 4px solid var(--pr-border);
+  flex-shrink: 0;
+}
+
+.Prof_imgFill {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.Prof_hiddenInput {
+  display: none !important;
+}
+
+.Prof_avatarEdit {
+  position: absolute;
+  bottom: -8px;
+  right: -8px;
+  background: var(--home-gradient);
+  color: white;
+  border: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.Prof_idTexts {
+  text-align: center;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.Prof_mainName {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--pr-text);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.Prof_mainEmail {
+  color: var(--pr-text-muted);
+  font-size: 0.9rem;
+  word-break: break-all;
+}
+
+.Prof_btnPrimary {
+  width: 100%;
+  padding: 12px;
+  background: var(--home-gradient);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.Prof_panelTitle {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: var(--pr-text-muted);
+  font-weight: 700;
+  margin: 0;
+}
+
+.Prof_sidePanel header,
+.Prof_sectionRow {
+  border-bottom: 1px solid var(--pr-border);
+  padding-bottom: 8px;
+  margin-bottom: 15px;
+}
+
+.Prof_miniStatsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.Prof_miniStatTab {
+  background: var(--pr-bg);
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.Prof_miniStatTab header {
+  font-size: 0.7rem;
+  color: var(--pr-text-muted);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.Prof_miniStatTab p {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--pr-text);
+}
+
+.Prof_weekBarsArea {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  min-width: 150px;
+}
+
+.Prof_weekBarGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.Prof_weekBar {
+  width: 34px;
+  height: 6px;
+  background: var(--pr-border);
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.Prof_weekBar.active {
+  background: var(--home-gradient);
+}
+
+.Prof_weekBarGroup span {
+  font-size: 0.65rem;
+  color: var(--pr-text-muted);
+  font-weight: 700;
+}
+
+.Prof_infoItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--pr-text);
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+}
+
+.Prof_infoItem svg {
+  color: var(--pr-text-muted);
+  flex-shrink: 0;
+}
+
+.Prof_sideInput {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--pr-border);
+  border-radius: 8px;
+  background: var(--pr-bg);
+  color: var(--pr-text);
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.Prof_sideInput:focus {
+  border-color: var(--auth-brand-pink);
+}
+
+.Prof_sideConfirmBtn {
+  flex: 1;
+  padding: 10px;
+  background: var(--home-gradient);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.Prof_sideCancelBtn {
+  padding: 10px;
+  background: var(--pr-bg);
+  color: var(--pr-text-muted);
+  border: 1px solid var(--pr-border);
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Prof_sectionRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+/* --- MAIN CONTENT (Right) --- */
+.Prof_mainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+.Prof_mainPanel {
+  background: var(--pr-panel);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: var(--pr-shadow);
+  border: 1px solid var(--pr-border);
+  transition: all 0.4s ease;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.Prof_panelHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  color: var(--pr-text-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.Prof_miniIcon {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: var(--home-gradient) !important;
+  color: white !important;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(255, 20, 147, 0.3);
+  font-size: 12px;
+}
+
+.Prof_miniIcon:hover {
+  transform: scale(1.1);
+  filter: brightness(1.1);
+}
+
+.Prof_headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.Prof_headerLeft h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--pr-text);
+}
+
+.Prof_miniTabBtn {
+  background: var(--pr-bg);
+  border: 1px solid var(--pr-border);
+  color: var(--pr-text);
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+}
+
+/* --- Heatmap Styles --- */
+.Prof_heatmapContainer {
+  width: 100%;
+  overflow: hidden;
+}
+
+.Prof_heatmapGrid {
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  padding-top: 25px;
+  position: relative;
+  scrollbar-width: thin;
+  scrollbar-color: var(--pr-border) transparent;
+  width: 100%;
+  min-height: 140px;
+}
+
+.Prof_heatmapCol {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.Prof_monthStart {
+  margin-left: 15px;
+}
+
+.Prof_sqStack {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.Prof_sq {
+  width: 12px;
+  height: 12px;
+  background: var(--pr-border);
+  border-radius: 3px;
+  transition: all 0.2s;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.Prof_sq.active {
+  background: var(--home-gradient);
+  box-shadow: 0 0 8px rgba(255, 20, 147, 0.2);
+}
+
+.Prof_sq.active:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 12px rgba(255, 20, 147, 0.4);
+  z-index: 10;
+}
+
+.Prof_sq.empty {
+  background: transparent;
+}
+
+.Prof_monthLabel {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  font-size: 0.65rem;
+  color: var(--pr-text-muted);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.Prof_monthLabel.empty {
+  visibility: hidden;
+}
+
+/* --- Trend Chart --- */
+.Prof_trendChart {
+  height: 180px;
+  background: var(--pr-bg);
+  border-radius: 12px;
+  padding: 20px 20px 35px 20px;
+  position: relative;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--pr-border) transparent;
+}
+
+.Prof_barsArea {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  height: 100%;
+  gap: 6px;
+  min-width: 600px;
+  padding-bottom: 5px;
+}
+
+.Prof_trendBarGroup {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  min-width: 15px;
+}
+
+.Prof_trendBar {
+  width: 8px;
+  background: var(--pr-border);
+  border-radius: 20px;
+  transition: all 0.3s;
+  min-height: 4px;
+}
+
+.Prof_trendBar.active {
+  background: var(--home-gradient);
+}
+
+.Prof_barNum {
+  position: absolute;
+  bottom: -20px;
+  font-size: 0.65rem;
+  color: var(--pr-text-muted);
+  font-weight: 700;
+}
+
+.Prof_mainTextarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 15px;
+  border: 1px solid var(--pr-border);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  background: var(--pr-input);
+  color: var(--pr-text);
+}
+
+.Prof_mainBioText {
+  color: var(--pr-text);
+  line-height: 1.6;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.Prof_activityRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 18px;
+  border-bottom: 1px solid var(--pr-border);
+  transition: background 0.2s;
+}
+
+.Prof_activityRow:last-child {
+  border-bottom: none;
+}
+
+.Prof_activityRow:hover {
+  background: rgba(255, 20, 147, 0.02);
+}
+
+.Prof_actIcon {
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 20, 147, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--auth-brand-pink);
+  flex-shrink: 0;
+}
+
+.Prof_actInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.Prof_actHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.Prof_actName {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--pr-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.Prof_actTime {
+  font-size: 0.75rem;
+  color: var(--pr-text-muted);
+  font-weight: 600;
+  background: var(--pr-bg);
+  padding: 2px 8px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.Prof_actDesc {
+  font-size: 0.85rem;
+  color: var(--pr-text-muted);
+  margin: 4px 0;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-clamp: 2;
+  overflow: hidden;
+}
+
+.Prof_actDate {
+  font-size: 0.75rem;
+  color: var(--auth-brand-pink);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1024px) {
+  .Prof_contentWrapper {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .Prof_sidebar {
+    width: 100%;
+  }
+
+  .Prof_mainContent {
+    width: 100%;
+  }
+
+  .Prof_avatarLg {
+    width: 120px;
+    height: 120px;
+  }
+
+  .Prof_mainName {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .Prof_container {
+    padding: 15px;
+  }
+
+  .Prof_miniStatsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .Prof_weekBarsArea {
+    overflow-x: auto;
+    padding-bottom: 5px;
+  }
+
+  .Prof_weekBar {
+    width: 28px;
+  }
+
+
+
+  .Prof_actHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .Prof_actTime {
+    align-self: flex-start;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .Prof_panelHeader, .Prof_sectionRow {
+    flex-direction: column !important;
+    place-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+}

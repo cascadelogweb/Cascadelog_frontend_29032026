@@ -1,0 +1,441 @@
+/* --- Theme Variables --- */
+.DAILYACT_light {
+  --da-bg: #f8f9fa;
+  --da-panel: #ffffff;
+  --da-text: #333333;
+  --da-text-muted: #666666;
+  --da-border: #eeeeee;
+  --da-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  --da-input-bg: #ffffff;
+}
+
+.DAILYACT_dark {
+  --da-bg: #0d1117;
+  --da-panel: #161b22;
+  --da-text: #c9d1d9;
+  --da-text-muted: #8b949e;
+  --da-border: #30363d;
+  --da-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  --da-input-bg: #0d1117;
+}
+
+.DAILYACT_container {
+  display: flex;
+  gap: 24px;
+  padding: 24px;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: var(--da-bg);
+  transition: all 0.4s ease;
+}
+
+/* Left Portion Styles */
+.DAILYACT_leftPortion {
+  flex: 1.4;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.DAILYACT_iframeHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background: var(--da-panel);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--da-shadow);
+  border: 1px solid var(--da-border);
+  cursor: pointer;
+  color: var(--da-text);
+}
+
+.DAILYACT_headerTitle {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* Right Portion Styles */
+.DAILYACT_rightPortion {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.DAILYACT_statusBox,
+.DAILYACT_uploadBox {
+  background: var(--da-panel);
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: var(--da-shadow);
+  border: 1px solid var(--da-border);
+  color: var(--da-text);
+  transition: all 0.4s ease;
+}
+
+.DAILYACT_statusHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.DAILYACT_boxTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--da-text);
+}
+
+.DAILYACT_statusBadge {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.DAILYACT_pending {
+  background: #fff7ed;
+  color: #c2410c;
+}
+
+.DAILYACT_active {
+  background: #f0fdf4;
+  color: #15803d;
+}
+
+.DAILYACT_completed {
+  background: rgba(37, 99, 235, 0.1);
+  color: #2563eb;
+  border: 1px solid rgba(37, 99, 235, 0.2);
+}
+
+.DAILYACT_startActionBtn,
+.DAILYACT_completeBtn {
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: var(--home-gradient, linear-gradient(to right, #ff1493, #ff00ff));
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.DAILYACT_uploadGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.DAILYACT_uploadLabel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  border: 2px dashed var(--da-border);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  background: var(--da-bg);
+  position: relative;
+}
+
+.DAILYACT_uploadLabel:hover {
+  border-color: #ff1493;
+  background: rgba(255, 20, 147, 0.05);
+}
+
+.DAILYACT_uploadIcon {
+  font-size: 1.2rem;
+  color: #ff1493;
+}
+
+.DAILYACT_uploadText {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--da-text-muted);
+}
+
+/* Remove File Button */
+.DAILYACT_removeFileBtn {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 22px;
+  height: 22px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ef4444;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  transition: all 0.2s;
+  z-index: 10;
+}
+
+.DAILYACT_promoCard {
+  background: #1e1e1e;
+  padding: 40px;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: white;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  flex: 1;
+}
+
+.DAILYACT_promoLogo {
+  width: 100%;
+  height: auto;
+}
+
+.DAILYACT_promoTitle {
+  font-size: 1.8rem;
+  margin: 20px 0 10px;
+  font-weight: 800;
+  background: var(--home-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.DAILYACT_promoNote {
+  color: #aaa;
+  max-width: 300px;
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+
+.DAILYACT_promoFeatures {
+  display: flex;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.DAILYACT_featureTag {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.DAILYACT_launchBtn {
+  margin-top: 10px;
+  padding: 12px 30px;
+  border-radius: 30px;
+  border: none;
+  background: white;
+  color: #333;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.DAILYACT_launchBtn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+}
+
+.DAILYACT_statusGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.DAILYACT_statusItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.DAILYACT_itemLabel {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: var(--da-text-muted);
+  font-weight: 700;
+}
+
+.DAILYACT_itemValue {
+  font-size: 0.9rem;
+  color: var(--da-text);
+  font-weight: 600;
+}
+
+.DAILYACT_pointsText {
+  color: #ff1493;
+  font-size: 1.1rem;
+}
+
+.DAILYACT_descriptionBox {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  border: 1px solid var(--da-border);
+  border-radius: 8px;
+  resize: vertical;
+  min-height: 80px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  background: var(--da-input-bg);
+  color: var(--da-text);
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.DAILYACT_editBtn,
+.DAILYACT_deleteBtn {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.DAILYACT_editBtn {
+  background: var(--da-bg);
+  color: var(--da-text);
+}
+
+.DAILYACT_deleteBtn {
+  background: #fee2e2;
+  color: #ef4444;
+}
+
+/* --- POPUP STYLES --- */
+.DAILYACT_popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: DAILYACT_fadeIn 0.3s ease-out;
+}
+
+.DAILYACT_popupBox {
+  background: var(--da-panel);
+  padding: 40px 60px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: var(--da-text);
+  border: 1px solid var(--da-border);
+}
+
+@keyframes DAILYACT_pageFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes DAILYACT_slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes DAILYACT_popIn {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+
+  70% {
+    transform: scale(1.02);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes DAILYACT_fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.DAILYACT_pageFade {
+  animation: DAILYACT_pageFadeIn 0.8s ease-out;
+}
+
+.DAILYACT_fadeInUp {
+  opacity: 0;
+  animation: DAILYACT_slideUp 0.6s ease-out forwards;
+}
+
+.DAILYACT_stagger1 {
+  animation-delay: 0.1s;
+}
+
+.DAILYACT_stagger2 {
+  animation-delay: 0.3s;
+}
+
+.DAILYACT_scaleIn {
+  animation: DAILYACT_popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@media (max-width: 992px) {
+  .DAILYACT_container {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .DAILYACT_leftPortion,
+  .DAILYACT_rightPortion {
+    width: 100%;
+    flex: none;
+  }
+}
